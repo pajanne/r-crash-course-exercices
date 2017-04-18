@@ -1,0 +1,46 @@
+---
+title: "Gapminder Analysis"
+author: "You!"
+date: "Tue 18 Apr 2017"
+output: html_document
+---
+
+Reading the data from `.csv`
+
+```{r}
+gapminder <- read.csv("gapminder.csv")
+head(gapminder)
+summary(gapminder)
+```
+
+
+Making a subset of European countries
+
+
+```{r}
+euro_data <- gapminder[gapminder$continent == "Europe",]
+head(euro_data)
+summary(euro_data)
+```
+
+
+Plot GDP against Life Expectancy and calculate correlation
+
+
+```{r}
+plot(euro_data$gdpPercap, euro_data$lifeExp,col="red",
+     pch=16,
+     xlab="Population",
+     ylab="Life Expectancy")
+
+```
+
+
+The correlation between GDP and Life Expectancy is XXXX
+
+The R packages used were:-
+
+```{r}
+sessionInfo()
+```
+
